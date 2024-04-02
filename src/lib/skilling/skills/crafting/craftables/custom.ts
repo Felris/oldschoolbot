@@ -59,6 +59,7 @@ export const customCraftables: Craftable[] = [
 		level: 93,
 		xp: 3 * 188,
 		inputItems: new Bank({ 'Royal dragon leather': 3 }),
+		altInputItems: new Bank({ 'Royal dragonhide': 3 }),
 		tickRate: 3.5
 	},
 	{
@@ -67,6 +68,7 @@ export const customCraftables: Craftable[] = [
 		level: 87,
 		xp: 1 * 188,
 		inputItems: new Bank({ 'Royal dragon leather': 1 }),
+		altInputItems: new Bank({ 'Royal dragonhide': 1 }),
 		tickRate: 3.5
 	},
 	{
@@ -75,6 +77,7 @@ export const customCraftables: Craftable[] = [
 		level: 89,
 		xp: 2 * 188,
 		inputItems: new Bank({ 'Royal dragon leather': 2 }),
+		altInputItems: new Bank({ 'Royal dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -83,6 +86,7 @@ export const customCraftables: Craftable[] = [
 		level: 91,
 		xp: 2 * 188,
 		inputItems: new Bank({ 'Royal dragon leather': 2 }),
+		altInputItems: new Bank({ 'Royal dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -91,6 +95,7 @@ export const customCraftables: Craftable[] = [
 		level: 87,
 		xp: 2 * 188,
 		inputItems: new Bank({ 'Royal dragon leather': 2 }),
+		altInputItems: new Bank({ 'Royal dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	...carapaceCraftables

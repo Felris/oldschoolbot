@@ -10,6 +10,7 @@ const Dragonhide: Craftable[] = [
 		level: 57,
 		xp: 62,
 		inputItems: new Bank({ 'Green dragon leather': 1 }),
+		altInputItems: new Bank({ 'Green dragonhide': 1 }),
 		tickRate: 3
 	},
 	{
@@ -18,6 +19,7 @@ const Dragonhide: Craftable[] = [
 		level: 60,
 		xp: 124,
 		inputItems: new Bank({ 'Green dragon leather': 2 }),
+		altInputItems: new Bank({ 'Green dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -30,6 +32,11 @@ const Dragonhide: Craftable[] = [
 			'Maple shield': 1,
 			'Steel nails': 15
 		}),
+		altInputItems: new Bank({
+			'Green dragonhide': 2,
+			'Maple shield': 1,
+			'Steel nails': 15
+		}),
 		tickRate: 5
 	},
 	{
@@ -38,6 +45,7 @@ const Dragonhide: Craftable[] = [
 		level: 63,
 		xp: 186,
 		inputItems: new Bank({ 'Green dragon leather': 3 }),
+		altInputItems: new Bank({ 'Green dragonhide': 3 }),
 		tickRate: 3.5
 	},
 	{
@@ -46,6 +54,7 @@ const Dragonhide: Craftable[] = [
 		level: 66,
 		xp: 70,
 		inputItems: new Bank({ 'Blue dragon leather': 1 }),
+		altInputItems: new Bank({ 'Blue dragonhide': 1 }),
 		tickRate: 3
 	},
 	{
@@ -54,6 +63,7 @@ const Dragonhide: Craftable[] = [
 		level: 68,
 		xp: 140,
 		inputItems: new Bank({ 'Blue dragon leather': 2 }),
+		altInputItems: new Bank({ 'Blue dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -66,6 +76,11 @@ const Dragonhide: Craftable[] = [
 			'Yew shield': 1,
 			'Mithril nails': 15
 		}),
+		altInputItems: new Bank({
+			'Blue dragonhide': 2,
+			'Yew shield': 1,
+			'Mithril nails': 15
+		}),
 		tickRate: 5
 	},
 	{
@@ -74,6 +89,7 @@ const Dragonhide: Craftable[] = [
 		level: 71,
 		xp: 210,
 		inputItems: new Bank({ 'Blue dragon leather': 3 }),
+		altInputItems: new Bank({ 'Blue dragonhide': 3 }),
 		tickRate: 3.5
 	},
 	{
@@ -82,6 +98,7 @@ const Dragonhide: Craftable[] = [
 		level: 73,
 		xp: 78,
 		inputItems: new Bank({ 'Red dragon leather': 1 }),
+		altInputItems: new Bank({ 'Red dragonhide': 1 }),
 		tickRate: 3
 	},
 	{
@@ -90,6 +107,7 @@ const Dragonhide: Craftable[] = [
 		level: 75,
 		xp: 156,
 		inputItems: new Bank({ 'Red dragon leather': 2 }),
+		altInputItems: new Bank({ 'Red dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -102,6 +120,11 @@ const Dragonhide: Craftable[] = [
 			'Magic shield': 1,
 			'Adamantite nails': 15
 		}),
+		altInputItems: new Bank({
+			'Red dragonhide': 2,
+			'Magic shield': 1,
+			'Adamantite nails': 15
+		}),
 		tickRate: 5
 	},
 	{
@@ -110,6 +133,7 @@ const Dragonhide: Craftable[] = [
 		level: 77,
 		xp: 234,
 		inputItems: new Bank({ 'Red dragon leather': 3 }),
+		altInputItems: new Bank({ 'Red dragonhide': 3 }),
 		tickRate: 3.5
 	},
 	{
@@ -118,6 +142,7 @@ const Dragonhide: Craftable[] = [
 		level: 79,
 		xp: 86,
 		inputItems: new Bank({ 'Black dragon leather': 1 }),
+		altInputItems: new Bank({ 'Black dragonhide': 1 }),
 		tickRate: 3
 	},
 	{
@@ -126,6 +151,7 @@ const Dragonhide: Craftable[] = [
 		level: 82,
 		xp: 172,
 		inputItems: new Bank({ 'Black dragon leather': 2 }),
+		altInputItems: new Bank({ 'Black dragonhide': 2 }),
 		tickRate: 3.5
 	},
 	{
@@ -138,6 +164,11 @@ const Dragonhide: Craftable[] = [
 			'Redwood shield': 1,
 			'Rune nails': 15
 		}),
+		altInputItems: new Bank({
+			'Black dragonhide': 2,
+			'Redwood shield': 1,
+			'Rune nails': 15
+		}),
 		tickRate: 5
 	},
 	{
@@ -146,6 +177,7 @@ const Dragonhide: Craftable[] = [
 		level: 84,
 		xp: 258,
 		inputItems: new Bank({ 'Black dragon leather': 3 }),
+		altInputItems: new Bank({ 'Black dragonhide': 3 }),
 		tickRate: 3.5
 	}
 ];

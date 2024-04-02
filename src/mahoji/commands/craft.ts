@@ -119,10 +119,18 @@ export const craftCommand: OSBMahojiCommand = {
 			}
 		}
 
+		const hasMasterCraftingCape = user.hasEquippedOrInBank('Crafting master cape');
+		let useAltBank = false;
 		if (!quantity) {
 			quantity = Math.floor(maxTripLength / timeToCraftSingleItem);
-			if (maxCanDo < quantity && maxCanDo !== 0) quantity = maxCanDo;
-		}
+			if (maxCanDo < quantity && maxCanDo !== 0) {
+				quantity = maxCanDo;
+			} else if (maxCanDo === 0 && hasMasterCraftingCape) {
+				const altMaxCanDo = userBank.fits(craftable.altInputItems || craftable.inputItems);
+				useAltBank = true;
+				if (altMaxCanDo < quantity && altMaxCanDo) quantity = altMaxCanDo;
+			}
+		} else if (quantity > userBank.fits(craftable.inputItems) && hasMasterCraftingCape) useAltBank = true;
 
 		const duration = quantity * timeToCraftSingleItem;
 		if (duration > maxTripLength) {
@@ -133,7 +141,9 @@ export const craftCommand: OSBMahojiCommand = {
 			)}.`;
 		}
 
-		const itemsNeeded = craftable.inputItems.clone().multiply(quantity);
+		const inputItems = craftable.inputItems.clone().multiply(quantity);
+		const altInputItems = craftable.altInputItems?.clone().multiply(quantity);
+		const itemsNeeded = useAltBank ? altInputItems || inputItems : inputItems;
 
 		// Check the user has all the required items to craft.
 		if (!userBank.has(itemsNeeded.bank)) {
