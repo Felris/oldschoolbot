@@ -1,4 +1,4 @@
-import { mentionCommand } from '@oldschoolgg/toolkit';
+import { mentionCommand } from '@oldschoolgg/toolkit/util';
 import type { ButtonInteraction, Interaction } from 'discord.js';
 import { ButtonBuilder, ButtonStyle } from 'discord.js';
 import { Time, removeFromArr, uniqueArr } from 'e';
@@ -256,7 +256,7 @@ async function repeatTripHandler(interaction: ButtonInteraction) {
 }
 
 function icDonateValidation(user: MUser, donator: MUser) {
-	if (user.isIronman || donator.isIronman) {
+	if (user.isIronman) {
 		return 'Ironmen stand alone!';
 	}
 	if (user.id === donator.id) {

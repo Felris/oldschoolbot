@@ -1,4 +1,4 @@
-import type { CommandRunOptions } from '@oldschoolgg/toolkit';
+import type { CommandRunOptions } from '@oldschoolgg/toolkit/util';
 import { ApplicationCommandOptionType } from 'discord.js';
 
 import { PVM_METHODS, type PvMMethod, ZALCANO_ID } from '../../lib/constants';
@@ -82,6 +82,11 @@ export const autocompleteMonsters = [
 	{
 		name: 'Colosseum',
 		aliases: ['colo', 'colosseum'],
+		id: -1
+	},
+	{
+		name: 'Pumpkinhead',
+		aliases: ['ph'],
 		id: -1
 	}
 ];

@@ -1,6 +1,5 @@
 import type { GearPreset } from '@prisma/client';
-import { Bank } from 'oldschooljs';
-import { itemID } from 'oldschooljs/dist/util';
+import { Bank, itemID } from 'oldschooljs';
 import { describe, expect, it, test } from 'vitest';
 
 import { GearStat } from '../../src/lib/gear/types';
@@ -45,6 +44,8 @@ describe('Gear', () => {
 				'Cooking cape',
 				'Crafting cape',
 				'Defence cape',
+				'Divination cape',
+				'Dungeoneering cape',
 				'Farming cape',
 				'Firemaking cape',
 				'Fishing cape',
@@ -52,6 +53,7 @@ describe('Gear', () => {
 				'Herblore cape',
 				'Hitpoints cape',
 				'Hunter cape',
+				'Invention cape',
 				'Magic cape',
 				'Mining cape',
 				'Prayer cape',

@@ -1,11 +1,12 @@
 import { Time, reduceNumByPercent, roll } from 'e';
-import { Bank } from 'oldschooljs';
+import { Bank, resolveItems } from 'oldschooljs';
 
 import getOSItem from './getOSItem';
+import { itemNameFromID } from './smallUtils';
 
-const crateItem = getOSItem('Birthday crate (s6)');
+const crateItem = getOSItem('Sinister crate (s7)');
 
-export function handleCrateSpawns(user: MUser, duration: number) {
+export function handleCrateSpawns(user: MUser, duration: number, messages?: string[]) {
 	const accountAge = user.accountAgeInDays();
 	let dropratePerMinute = 50 * 60;
 	if (accountAge) {
@@ -16,8 +17,29 @@ export function handleCrateSpawns(user: MUser, duration: number) {
 	}
 	dropratePerMinute = Math.ceil(dropratePerMinute / 3);
 	dropratePerMinute = Math.ceil(dropratePerMinute / 2);
+
+	const hweenPets = resolveItems([
+		'Kuro',
+		'Gregoyle',
+		'Mumpkin',
+		'Mumpkin (demonic)',
+		'Mumpkin (pumpkin)',
+		'Mumpkin (dead)',
+		'Polterpup',
+		'Mini pumpkinhead',
+		'Mini mortimer',
+		'Casper',
+		'Cob'
+	]);
+	if (hweenPets.some(pet => user.usingPet(pet))) {
+		dropratePerMinute = Math.ceil(dropratePerMinute / 10);
+		if (messages) {
+			messages.push(`10x higher droprates for ${itemNameFromID(user.user.minion_equippedPet!)}`);
+		}
+	}
+
 	if (user.isIronman) {
-		dropratePerMinute = Math.ceil(dropratePerMinute / 3);
+		dropratePerMinute = Math.ceil(dropratePerMinute / 6);
 	}
 	const minutes = Math.floor(duration / Time.Minute);
 	const loot = new Bank();

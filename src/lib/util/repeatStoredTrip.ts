@@ -53,6 +53,7 @@ import type {
 	NexTaskOptions,
 	NightmareActivityTaskOptions,
 	OfferingActivityTaskOptions,
+	OuraniaAltarOptions,
 	PickpocketActivityTaskOptions,
 	PuroPuroActivityTaskOptions,
 	RaidsOptions,
@@ -302,6 +303,15 @@ export const tripHandlers = {
 		commandName: 'runecraft',
 		args: (data: DarkAltarOptions) => ({ rune: `${darkAltarRunes[data.rune].item.name} (zeah)` })
 	},
+	[activity_type_enum.OuraniaAltar]: {
+		commandName: 'runecraft',
+		args: (data: OuraniaAltarOptions) => ({
+			rune: 'ourania altar',
+			usestams: data.stamina,
+			daeyalt_essence: data.daeyalt,
+			quantity: data.quantity
+		})
+	},
 	[activity_type_enum.Runecraft]: {
 		commandName: 'runecraft',
 		args: (data: RunecraftActivityTaskOptions) => ({
@@ -528,7 +538,7 @@ export const tripHandlers = {
 				cox: {
 					start: {
 						challenge_mode: data.challengeMode,
-						max_team_size: data.maxSizeInput,
+						type: data.users.length === 1 ? 'solo' : 'mass',
 						quantity: data.quantity
 					}
 				}
@@ -574,7 +584,8 @@ export const tripHandlers = {
 			tob: {
 				start: {
 					hard_mode: data.hardMode,
-					solo: data.solo
+					solo: data.solo,
+					quantity: data.quantity
 				}
 			}
 		})

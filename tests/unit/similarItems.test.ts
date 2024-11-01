@@ -1,10 +1,10 @@
-import { itemID, resolveItems } from 'oldschooljs/dist/util';
+import { itemID, resolveItems } from 'oldschooljs';
 import { describe, expect, test } from 'vitest';
 
 import { gorajanWarriorOutfit } from '../../src/lib/data/CollectionsExport';
 import { getSimilarItems } from '../../src/lib/data/similarItems';
 import { Gear } from '../../src/lib/structures/Gear';
-import { itemNameFromID } from '../../src/lib/util';
+import { itemNameFromID } from '../../src/lib/util/smallUtils';
 
 describe('Gear', () => {
 	const testGear = new Gear({
@@ -274,7 +274,8 @@ describe('Gear', () => {
 		gear.equip('Completionist cape');
 		expect(gear.hasEquipped('Invention master cape')).toEqual(true);
 		expect(gear.hasEquipped('Master quest cape')).toEqual(true);
-		expect(gear.hasEquipped('Achievement diary cape (t)')).toEqual(true);
+		expect(gear.hasEquipped('Achievement diary cape')).toEqual(true);
+		expect(gear.hasEquipped('Music cape')).toEqual(true);
 		expect(gear.hasEquipped('Slayer master cape')).toEqual(true);
 		expect(gear.hasEquipped('Attack master cape')).toEqual(true);
 		expect(gear.hasEquipped('Strength master cape')).toEqual(true);

@@ -2,9 +2,7 @@ import { PerkTier, cleanUsername, mentionCommand, seedShuffle } from '@oldschool
 import type { GearSetupType, Prisma, TameActivity, User, UserStats, xp_gains_skill_enum } from '@prisma/client';
 import { userMention } from 'discord.js';
 import { Time, calcWhatPercent, percentChance, randArrItem, sumArr, uniqueArr } from 'e';
-import { Bank } from 'oldschooljs';
-import type { Item, ItemBank } from 'oldschooljs/dist/meta/types';
-import { EquipmentSlot } from 'oldschooljs/dist/meta/types';
+import { Bank, EquipmentSlot, type Item, type ItemBank } from 'oldschooljs';
 
 import { UserError } from '@oldschoolgg/toolkit/structures';
 import { resolveItems } from 'oldschooljs/dist/util/util';
@@ -703,7 +701,8 @@ Charge your items using ${mentionCommand(globalClient, 'minion', 'charge')}.`
 		return allItems.has(checkBank);
 	}
 
-	usingPet(name: string) {
+	usingPet(name: string | number) {
+		if (typeof name === 'number') return this.user.minion_equippedPet === name;
 		return this.user.minion_equippedPet === itemID(name);
 	}
 
